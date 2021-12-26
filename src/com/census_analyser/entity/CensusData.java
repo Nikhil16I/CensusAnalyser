@@ -1,4 +1,4 @@
-package com.censu_analyser.entity;
+package com.census_analyser.entity;
 
 public class CensusData {
 	
@@ -7,6 +7,7 @@ public class CensusData {
 	
 	int areainSqKm;
 	double densityperSqKm;
+	
 //Constructor for CSV data Format
 	public CensusData(String state, long population, int areainsqkm, double densityperSqKm) {
 		super();

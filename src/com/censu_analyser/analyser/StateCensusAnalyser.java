@@ -5,16 +5,15 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.census_analyser.entity.CensusData;
 import com.opencsv.CSVReader;
-
-import com.censu_analyser.entity.CensusData;
 
 public class StateCensusAnalyser {
 
-	List<CensusData> censusData = new ArrayList<>();
+	List<CensusData> censusData = new ArrayList<>();//Storing Data in list
 	
 /*Method to load CSV data*/
-	public void loadCensusData() throws Exception {
+	public void loadCensusData(String filePath) throws Exception {
 	try {                                                         /*CSV File Path*/             
     	CSVReader csvReader = new CSVReader(new FileReader("C:\\Users\\DELL\\eclipse-workspace\\Indian_State_Census_Analyser\\src\\com\\resources\\IndiaStateCensusData.csv"));
     	                                                     
