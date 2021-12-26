@@ -22,7 +22,7 @@ public class CensusAnalyserTest {
 	@Test
 	public void testing_for_invalidfile() throws Exception {
 		analyser.loadCensusData(
-				"C:\\Users\\DELL\\eclipse-workspace\\Indian_State_Census_Analyser\\src\\com\\resources\\IndiaStateCensusData.csv");
+				"C:\\Users\\DELL\\eclipse-workspace\\Indian_State_Census_Analyser\\src\\com\\resources\\IndiaStateCensusDataWrongFileName.csv");
 	}
 
 }
