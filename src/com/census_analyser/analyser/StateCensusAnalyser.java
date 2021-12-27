@@ -26,9 +26,9 @@ public class StateCensusAnalyser {
 				censusData.add(new CensusData(csvdata[0], Long.parseLong(csvdata[1]), Integer.parseInt(csvdata[2]),
 						Double.parseDouble(csvdata[3])));
 			}
-			/*
-			 * for (CensusData info : censusData) { System.out.println(info); }
-			 */
+			
+			  for (CensusData info : censusData) { System.out.println(info); }
+			 
 		} catch (FileNotFoundException e) {
 			throw new Exception_InvalidFile("Enter a Valid File Name");
 			
