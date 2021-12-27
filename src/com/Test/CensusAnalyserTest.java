@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.censu_analyser.analyser.StateCensusAnalyser;
+import com.census_analyser.analyser.StateCensusAnalyser;
 
 public class CensusAnalyserTest {
 
@@ -24,5 +24,10 @@ public class CensusAnalyserTest {
 		analyser.loadCensusData(
 				"C:\\Users\\DELL\\eclipse-workspace\\Indian_State_Census_Analyser\\src\\com\\resources\\IndiaStateCensusDataWrongFileName.csv");
 	}
-
+	/* Testing for throwing Exception for Invalid DataType Name */
+	@Test
+	public void testing_for_InvalidDatatype() throws Exception {
+		analyser.loadCensusData(
+				"C:\\Users\\DELL\\eclipse-workspace\\Indian_State_Census_Analyser\\src\\com\\resources\\IndiaStateCensusData -WrongDataType.csv");
+	}
 }
