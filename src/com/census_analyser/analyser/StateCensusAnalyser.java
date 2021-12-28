@@ -56,4 +56,4 @@ public class StateCensusAnalyser {
 		return (csvdata[0].compareTo("State") + csvdata[1].compareTo("Population") + csvdata[2].compareTo("AreaInSqKm")+ csvdata[3].compareTo("DensityPerSqKm") == 0);
 
 	}
-}
+ }
