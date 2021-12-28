@@ -17,17 +17,18 @@ public class StateCensusAnalyser {
 	/* Method to load CSV data */
 	public void loadCensusData(String filePath) throws Exception {
 		try { /* CSV File Path */
-			CSVReader csvReader = new CSVReader(new FileReader(
-					"C:\\Users\\DELL\\eclipse-workspace\\Indian_State_Census_Analyser\\src\\com\\resources\\IndiaStateCensusData.csv"));
+			CSVReader csvReader = new CSVReader(new FileReader(filePath));
 
 			String[] csvdata;
+			int count = 0;
 			csvdata = csvReader.readNext();
 			while ((csvdata = csvReader.readNext()) != null) {
 				censusData.add(new CensusData(csvdata[0], Long.parseLong(csvdata[1]), Integer.parseInt(csvdata[2]),
 						Double.parseDouble(csvdata[3])));
-			}
-			
-			  for (CensusData info : censusData) { System.out.println(info); }
+				count++;
+			}	
+			  for (CensusData info : censusData) { System.out.println(info);
+			  }
 			 
 		} catch (FileNotFoundException e) {
 			throw new Exception_InvalidFile("Enter a Valid File Name");
