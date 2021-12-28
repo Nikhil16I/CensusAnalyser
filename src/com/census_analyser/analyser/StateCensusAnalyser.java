@@ -8,6 +8,7 @@ import java.util.List;
 import com.Exceptions.Exception_InvalidDataType;
 import com.Exceptions.Exception_InvalidDelimiter;
 import com.Exceptions.Exception_InvalidFile;
+import com.Exceptions.Exception_WrongHeader;
 import com.census_analyser.entity.CensusData;
 import com.opencsv.CSVReader;
 
@@ -22,10 +23,13 @@ public class StateCensusAnalyser {
 
 			String[] csvdata;
 			csvdata = csvReader.readNext();
+			if (!wrong_Header(csvdata))
+				throw new Exception_WrongHeader("Header is Incorrect please check Header");
+			
 			while ((csvdata = csvReader.readNext()) != null) {
-				if(csvdata.length != 4) 
+				if (csvdata.length != 4)
 					throw new Exception_InvalidDelimiter("Invalid File type , Delimiter is wrong in File");
-				
+
 				censusData.add(new CensusData(csvdata[0], Long.parseLong(csvdata[1]), Integer.parseInt(csvdata[2]),
 						Double.parseDouble(csvdata[3])));
 			}
@@ -47,4 +51,9 @@ public class StateCensusAnalyser {
 			return true;
 		return false;
 	}
- }
+
+	public boolean wrong_Header(String[] csvdata) {
+		return (csvdata[0].compareTo("State") + csvdata[1].compareTo("Population") + csvdata[2].compareTo("AreaInSqKm")+ csvdata[3].compareTo("DensityPerSqKm") == 0);
+
+	}
+}

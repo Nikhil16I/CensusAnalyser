@@ -43,11 +43,24 @@ public class CensusAnalyserTest {
 		}
 	}
 
+	/* Testing for throwing Exception for Invalid Delimeter */
 	@Test
 	public void testing_for_InvalidDelimiter() throws Exception {
 		try {
 			analyser.loadCensusData(
 					"C:\\Users\\DELL\\eclipse-workspace\\Indian_State_Census_Analyser\\src\\com\\resources\\IndiaStateCensusData_delimeter_invalid.csv");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	/* Testing for throwing Exception for Wrong Header */
+	@Test
+	public void testing_for_WrongHeader() throws Exception {
+		try {
+			analyser.loadCensusData(
+					"C:\\Users\\DELL\\eclipse-workspace\\Indian_State_Census_Analyser\\src\\com\\resources\\IndiaStateCensusData_WrongHeader.csv");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
