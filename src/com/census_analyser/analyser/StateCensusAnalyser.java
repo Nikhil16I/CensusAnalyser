@@ -43,4 +43,4 @@ public class StateCensusAnalyser {
 			return true;
 		return false;
 	}
-}
+ }
