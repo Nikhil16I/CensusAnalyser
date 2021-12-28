@@ -17,22 +17,24 @@ public class StateCensusAnalyser {
 	/* Method to load CSV data */
 	public void loadCensusData(String filePath) throws Exception {
 		try { /* CSV File Path */
-			CSVReader csvReader = new CSVReader(new FileReader(	filePath));
+			CSVReader csvReader = new CSVReader(new FileReader(filePath));
+
 			String[] csvdata;
 			csvdata = csvReader.readNext();
 			while ((csvdata = csvReader.readNext()) != null) {
 				censusData.add(new CensusData(csvdata[0], Long.parseLong(csvdata[1]), Integer.parseInt(csvdata[2]),
 						Double.parseDouble(csvdata[3])));
 			}
-			
-			  for (CensusData info : censusData) { System.out.println(info); }
-			 
+			for (CensusData info : censusData) {
+				System.out.println(info);
+			}
+
 		} catch (FileNotFoundException e) {
 			throw new Exception_InvalidFile("Enter a Valid File Name");
-			
+
 		} catch (NumberFormatException e) {
 			throw new Exception_InvalidDataType("Invalid Data Type !! please Input Valid one.");
-	  }
+		}
 
 	}
 

@@ -28,6 +28,19 @@ public class CensusAnalyserTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
+	}
+
+	/* Testing for throwing Exception for Invalid DataType Name */
+	@Test
+	public void testing_for_InvalidDatatype() throws Exception {
+		try {
+			analyser.loadCensusData(
+					"C:\\Users\\DELL\\eclipse-workspace\\Indian_State_Census_Analyser\\src\\com\\resources\\IndiaStateCensusData_wrongdatattype.csv");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
