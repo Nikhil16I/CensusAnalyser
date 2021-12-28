@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.Exceptions.Exception_InvalidDataType;
+import com.Exceptions.Exception_InvalidDelimiter;
 import com.Exceptions.Exception_InvalidFile;
 import com.census_analyser.entity.CensusData;
 import com.opencsv.CSVReader;
@@ -22,6 +23,9 @@ public class StateCensusAnalyser {
 			String[] csvdata;
 			csvdata = csvReader.readNext();
 			while ((csvdata = csvReader.readNext()) != null) {
+				if(csvdata.length != 4) 
+					throw new Exception_InvalidDelimiter("Invalid File type , Delimiter is wrong in File");
+				
 				censusData.add(new CensusData(csvdata[0], Long.parseLong(csvdata[1]), Integer.parseInt(csvdata[2]),
 						Double.parseDouble(csvdata[3])));
 			}
